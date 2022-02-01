@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  dev_db:
+    image: mysql:8.0.23
+    environment:
+      MYSQL_DATABASE: favorapp
+      MYSQL_USER: favorq
+      MYSQL_PASSWORD: wahthell
+      MYSQL_ROOT_PASSWORD: "kestrelqaq"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
